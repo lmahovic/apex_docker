@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+    oracle_xe:
+        container_name: db_container
+        image: container-registry.oracle.com/database/express
+        hostname: database
+        ports:
+            - "1521:1521"
+            - "5500:5500"
+        networks:
+            - apex-network
+        volumes:
+            - db-volume:/opt/oracle/oradata
+        environment:
+            - ORACLE_PWD=1230123
+
+    ords_apex:
+        container_name: ords
+        image: container-registry.oracle.com/database/ords
+        ports:
+            - "8181:8181"
+        networks:
+            - apex-network
+        volumes:
+            - .:/opt/oracle/variables
+        restart: on-failure
+        depends_on:
+            - oracle_xe
+
+networks:
+    apex-network:
+        driver: bridge
+
+volumes:
+    db-volume:

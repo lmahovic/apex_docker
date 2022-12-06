@@ -1,0 +1,15 @@
+docker run -d --name db-container -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=1230123 -v db-demo-volume:/opt/oracle/oradata --network=demo-network --hostname database container-registry.oracle.com/database/express
+docker run -d --name ords --network=demo-network -p 8181:8181 -v ${PWD}:/opt/oracle/variables container-registry.oracle.com/database/ords
+
+LINUX
+
+echo 'CONN_STRING=sys/1230123@database:1521/XEPDB1'>conn_string.txt
+
+
+WINDOWS
+
+"CONN_STRING=sys/1230123@database:1521/XEPDB1" | Out-File conn_string.txt -NoNewline
+
+
+docker exec -it ords tail -f /tmp/install_container.log
+
