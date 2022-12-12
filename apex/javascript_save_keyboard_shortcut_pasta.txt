@@ -1,0 +1,10 @@
+PUT IN REGION > ATTRIBUTES > JavaScript Initialization Code
+
+
+function(config) {
+    config.initActions = function( actions ) {
+        actions.lookup("save").shortcut = "Ctrl+S";
+        actions.update("save");
+    }
+    return config;
+}
