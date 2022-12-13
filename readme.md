@@ -11,6 +11,8 @@ Docker, Git.
 
 ### Usage:
 
+Instruction are also in the docker_run.txt file
+
 1. clone repository
 2. open a terminal with this directory as the working directory
 3. create a connection string file for ORDS with 
@@ -22,3 +24,5 @@ Docker, Git.
    + `docker-compose up -d`
 5. check apex installation progress with 
     + `docker exec -it ords tail -f /tmp/install_container.log`
+6. run ACLaccess.sql as PDB SYS USER
+    + ACL entry for apex is needed for apex to work with jasper reports server
