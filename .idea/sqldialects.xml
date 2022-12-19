@@ -3,5 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/database/ARTIKL_PRODAJE_MARZE_SELECT.sql" dialect="OracleSqlPlus" />
     <file url="file://$PROJECT_DIR$/database/initial_data.sql" dialect="OracleSqlPlus" />
+    <file url="file://$PROJECT_DIR$/database/menu_package.sql" dialect="OracleSqlPlus" />
   </component>
 </project>

@@ -1,0 +1,7 @@
+Custom fonts are needed for correct PDF printing.
+
+Import the CustomFont.jar file into Jasper Studio and Jasper Server.
+
+In studio create .jrtx files in projects and reference them in templates.
+
+In server make sure the report has access to the JAR in report resources.
